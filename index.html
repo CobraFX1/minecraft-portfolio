@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CraftDev</title>
+  <meta name="description"
+    content="Professional Minecraft developer specializing in custom servers, Forge/Fabric mods, and Bukkit/Spigot plugins. Building immersive experiences block by block.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛏️</text></svg>">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="nav-logo">
+        <span class="logo-icon">⛏️</span>
+        <span>CraftDev</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="images/hero-bg.png" alt="Minecraft landscape background">
+    </div>
+    <div id="three-bg"></div>
+    <canvas id="particles-canvas"></canvas>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="pulse"></span>
+          Available for commissions
+        </div>
+        <h1>Building Minecraft<br><span class="highlight" id="typing-text">Servers</span><span
+            style="color: var(--accent-green); animation: pulse 1s infinite;">|</span></h1>
+        <p>Professional Minecraft developer crafting custom servers, immersive mods, and powerful plugins. Turning ideas
+          into playable reality — one block at a time.</p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn-primary">View My Work →</a>
+          <a href="#contact" class="btn-secondary">💬 Let's Talk</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-value" data-target="50" data-suffix="+">0</div>
+            <div class="stat-label">Projects Completed</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value" data-target="10" data-suffix="K+">0</div>
+            <div class="stat-label">Players Reached</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value" data-target="4" data-suffix="+">0</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image reveal">
+          <img src="images/server-project.png" alt="About me illustration">
+        </div>
+        <div class="about-text reveal">
+          <span class="section-label">About Me</span>
+          <h2 class="section-title">Passionate Minecraft<br>Developer & Creator</h2>
+          <p>I'm a dedicated Minecraft developer with deep experience across the entire modding and server ecosystem.
+            From building complex Forge and Fabric mods to architecting high-performance server networks with custom
+            plugins — I bring visions to life.</p>
+          <p>My expertise spans server administration, mod compatibility troubleshooting, modpack curation, and original
+            content creation. I thrive on solving the hardest technical challenges the Minecraft ecosystem throws at me.
+          </p>
+          <div class="about-highlights">
+            <div class="highlight-item"><span class="icon">🔧</span> Forge & Fabric</div>
+            <div class="highlight-item"><span class="icon">🔌</span> Bukkit & Spigot</div>
+            <div class="highlight-item"><span class="icon">🖥️</span> Server Admin</div>
+            <div class="highlight-item"><span class="icon">📦</span> Modpack Creator</div>
+            <div class="highlight-item"><span class="icon">🐛</span> Bug Whisperer</div>
+            <div class="highlight-item"><span class="icon">🧩</span> Compatibility Expert</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section class="skills" id="skills">
+    <div class="container">
+      <span class="section-label reveal">Expertise</span>
+      <h2 class="section-title reveal">What I Do Best</h2>
+      <p class="section-desc reveal">From server infrastructure to custom game mechanics, I cover the full Minecraft
+        development stack.</p>
+      <div class="skills-grid">
+        <div class="skill-card reveal">
+          <div class="skill-icon">🖥️</div>
+          <h3>Server Development</h3>
+          <p>Building and managing performant Minecraft server networks with custom configurations, anti-cheat,
+            permissions, and economy systems.</p>
+          <div class="skill-tags">
+            <span class="skill-tag">Paper</span>
+            <span class="skill-tag">Velocity</span>
+            <span class="skill-tag">BungeeCord</span>
+            <span class="skill-tag">Pterodactyl</span>
+            <span class="skill-tag">Linux</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-icon">🧪</div>
+          <h3>Mod Development</h3>
+          <p>Creating custom Forge and Fabric mods — from new items and blocks to complex world generation, entities,
+            and gameplay mechanics.</p>
+          <div class="skill-tags">
+            <span class="skill-tag">Forge</span>
+            <span class="skill-tag">Fabric</span>
+            <span class="skill-tag">NeoForge</span>
+            <span class="skill-tag">Mixins</span>
+            <span class="skill-tag">Java</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-icon">🔌</div>
+          <h3>Plugin Development</h3>
+          <p>Developing robust Bukkit/Spigot plugins for minigames, custom GUIs, integration APIs, database-backed
+            features, and more.</p>
+          <div class="skill-tags">
+            <span class="skill-tag">Spigot</span>
+            <span class="skill-tag">Paper API</span>
+            <span class="skill-tag">Kotlin</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">Redis</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <span class="section-label reveal">Portfolio</span>
+      <h2 class="section-title reveal">Featured Projects</h2>
+      <p class="section-desc reveal">A selection of my proudest Minecraft creations. <a href="project-guides.html"
+          class="inline-link">See how they were built →</a></p>
+      <div class="projects-grid">
+        <div class="project-card reveal">
+          <div class="project-image">
+            <img src="images/server-project.png" alt="Moira Network">
+            <div class="project-overlay"></div>
+            <span class="project-status live">● Live</span>
+          </div>
+          <div class="project-info">
+            <h3>Moira Network</h3>
+            <p>A custom modded survival server with 100+ curated mods, custom economy, and unique gameplay mechanics for
+              an engaged community.</p>
+            <div class="project-tech">
+              <span>Forge 1.20.1</span>
+              <span>Sinytra</span>
+              <span>Custom Config</span>
+            </div>
+            <a href="project-guides.html#moira" class="project-link">View Build Log →</a>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-image">
+            <img src="images/mod-project.png" alt="Equestrian Mod">
+            <div class="project-overlay"></div>
+            <span class="project-status released">Released</span>
+          </div>
+          <div class="project-info">
+            <h3>Equestrian Overhaul</h3>
+            <p>A comprehensive modpack featuring custom horse mechanics, new biomes, and a complete equestrian gameplay
+              experience with 70+ mods.</p>
+            <div class="project-tech">
+              <span>Forge</span>
+              <span>Fabric Bridge</span>
+              <span>Modpack</span>
+            </div>
+            <a href="project-guides.html#equestrian" class="project-link">View Build Log →</a>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-image">
+            <img src="images/plugin-project.png" alt="AutoCraft Plugin">
+            <div class="project-overlay"></div>
+            <span class="project-status dev">In Dev</span>
+          </div>
+          <div class="project-info">
+            <h3>AutoCraft Suite</h3>
+            <p>A plugin suite for automated server management — scheduled restarts, dynamic MOTD, player analytics, and
+              Discord integration.</p>
+            <div class="project-tech">
+              <span>Paper API</span>
+              <span>Java 17</span>
+              <span>Discord JDA</span>
+            </div>
+            <a href="project-guides.html#autocraft" class="project-link">View Build Log →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <span class="section-label reveal">Testimonials</span>
+      <h2 class="section-title reveal">What People Say</h2>
+      <p class="section-desc reveal">Feedback from server owners, community members, and collaborators.</p>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Set up our entire modded server from scratch. 100+ mods running flawlessly with
+            zero crashes after launch. Absolutely worth every penny."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">🎮</div>
+            <div>
+              <div class="testimonial-name">PixelKnight</div>
+              <div class="testimonial-role">Server Owner — SkyRealm Network</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"The Equestrian modpack is incredible. The attention to detail in balancing and
+            compatibility testing is something you rarely see. My community loves it."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">🐴</div>
+            <div>
+              <div class="testimonial-name">EllaRides</div>
+              <div class="testimonial-role">Community Manager — Equestria MC</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Fixed a crash that three other devs couldn't figure out. Diagnosed a Mixin
+            conflict in under an hour. This person really knows their stuff."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">🔧</div>
+            <div>
+              <div class="testimonial-name">RedstoneWizard</div>
+              <div class="testimonial-role">Mod Developer</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="services" id="services">
+    <div class="container">
+      <span class="section-label reveal">Services</span>
+      <h2 class="section-title reveal">How I Can Help</h2>
+      <p class="section-desc reveal">Whether you're starting from scratch or need expert help on an existing project.
+      </p>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <span class="service-num">01</span>
+          <div>
+            <h3>Custom Server Setup</h3>
+            <p>Full server deployment — from hosting configuration and plugin setup to permissions, anti-grief, and
+              performance tuning.</p>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <span class="service-num">02</span>
+          <div>
+            <h3>Mod & Plugin Creation</h3>
+            <p>Bespoke mod or plugin development tailored to your vision. New mechanics, items, GUIs, world generation —
+              you name it.</p>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <span class="service-num">03</span>
+          <div>
+            <h3>Modpack Curation</h3>
+            <p>Expert modpack assembly with compatibility testing, config tuning, and optimization for a smooth player
+              experience.</p>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <span class="service-num">04</span>
+          <div>
+            <h3>Debugging & Consulting</h3>
+            <p>Crash analysis, performance profiling, mod conflict resolution, and general Minecraft technical
+              consulting.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TECH STACK ===== -->
+  <section class="tech-stack" id="tech">
+    <div class="container">
+      <span class="section-label reveal">Tech Stack</span>
+      <h2 class="section-title reveal">Tools & Technologies</h2>
+      <p class="section-desc reveal">The technologies and tools powering my Minecraft development workflow.</p>
+      <div class="tech-grid reveal">
+        <div class="tech-item"><span class="icon">☕</span><span>Java</span></div>
+        <div class="tech-item"><span class="icon">🟣</span><span>Kotlin</span></div>
+        <div class="tech-item"><span class="icon">🔨</span><span>Gradle</span></div>
+        <div class="tech-item"><span class="icon">📦</span><span>Maven</span></div>
+        <div class="tech-item"><span class="icon">🔥</span><span>Forge</span></div>
+        <div class="tech-item"><span class="icon">🧵</span><span>Fabric</span></div>
+        <div class="tech-item"><span class="icon">⚡</span><span>NeoForge</span></div>
+        <div class="tech-item"><span class="icon">📜</span><span>Spigot API</span></div>
+        <div class="tech-item"><span class="icon">📄</span><span>Paper API</span></div>
+        <div class="tech-item"><span class="icon">🌐</span><span>Velocity</span></div>
+        <div class="tech-item"><span class="icon">🐧</span><span>Linux</span></div>
+        <div class="tech-item"><span class="icon">🐳</span><span>Docker</span></div>
+        <div class="tech-item"><span class="icon">🗄️</span><span>MySQL</span></div>
+        <div class="tech-item"><span class="icon">🔴</span><span>Redis</span></div>
+        <div class="tech-item"><span class="icon">🐙</span><span>Git</span></div>
+        <div class="tech-item"><span class="icon">💬</span><span>Discord Bots</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <span class="section-label reveal">Contact</span>
+      <h2 class="section-title reveal">Let's Build Something</h2>
+      <p class="section-desc reveal">Got a project in mind? Reach out and let's make it happen.</p>
+      <div class="contact-wrapper">
+        <div class="contact-info reveal">
+          <h3>Get in Touch</h3>
+          <p>I'm always open to discussing new projects, modding challenges, or server opportunities. Drop me a message!
+          </p>
+          <div class="contact-links">
+            <a href="#" class="contact-link">
+              <span class="link-icon">💬</span>
+              <div>
+                <div class="link-label">Discord</div>
+                <div class="link-value">CraftDev#0001</div>
+              </div>
+            </a>
+            <a href="#" class="contact-link">
+              <span class="link-icon">✉️</span>
+              <div>
+                <div class="link-label">Email</div>
+                <div class="link-value">hello@craftdev.com</div>
+              </div>
+            </a>
+            <a href="#" class="contact-link">
+              <span class="link-icon">🐙</span>
+              <div>
+                <div class="link-label">GitHub</div>
+                <div class="link-value">github.com/craftdev</div>
+              </div>
+            </a>
+            <a href="#" class="contact-link">
+              <span class="link-icon">🎮</span>
+              <div>
+                <div class="link-label">Modrinth</div>
+                <div class="link-value">modrinth.com/user/craftdev</div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <form class="contact-form reveal" id="contact-form">
+          <h3>Send a Message</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" placeholder="Steve" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="steve@minecraft.net" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="service">Service Needed</label>
+            <select id="service">
+              <option value="">Select a service...</option>
+              <option value="server">Server Setup</option>
+              <option value="mod">Mod Development</option>
+              <option value="plugin">Plugin Development</option>
+              <option value="modpack">Modpack Curation</option>
+              <option value="debug">Debugging & Consulting</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" placeholder="Tell me about your project..." required></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Message →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="logo-icon">⛏️</span>
+          <span>CraftDev</span>
+        </div>
+        <div class="footer-links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#services">Services</a>
+          <a href="project-guides.html">Build Guides</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 CraftDev. Crafted with ❤️ and ⛏️ — All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="three-bg.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

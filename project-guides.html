@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Build Guides — CraftDev</title>
+  <meta name="description" content="Detailed technical breakdowns of CraftDev's featured Minecraft projects.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="guides.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛏️</text></svg>">
+</head>
+<body>
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo"><span class="logo-icon">⛏️</span><span>CraftDev</span></a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#moira">Moira Network</a></li>
+        <li><a href="#equestrian">Equestrian Overhaul</a></li>
+        <li><a href="#autocraft">AutoCraft Suite</a></li>
+        <li><a href="index.html#contact" class="nav-cta">Get in Touch</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="guide-hero">
+    <div class="container">
+      <span class="section-label">Build Logs</span>
+      <h1 class="section-title" style="font-size:clamp(2rem,5vw,3.2rem)">How I Built These Projects</h1>
+      <p class="section-desc">Detailed technical breakdowns, architecture decisions, and step-by-step processes behind each featured project.</p>
+    </div>
+  </section>
+
+  <!-- PROJECT 1: MOIRA NETWORK -->
+  <section class="guide-section" id="moira">
+    <div class="container">
+      <div class="guide-header">
+        <span class="project-status live" style="position:static">● Live</span>
+        <h2 class="section-title">Moira Network</h2>
+        <p class="section-desc">A custom modded survival server with 100+ curated mods, custom economy, and unique gameplay mechanics.</p>
+      </div>
+
+      <div class="guide-grid">
+        <div class="guide-card">
+          <div class="guide-step">01</div>
+          <h3>Server Infrastructure</h3>
+          <p>Set up a dedicated server using <strong>Kinetic Hosting</strong> with a Forge 1.20.1 base. Configured JVM flags for optimal garbage collection with 8GB allocated RAM:</p>
+          <pre><code>-XX:+UseG1GC -XX:+ParallelRefProcEnabled
+-XX:MaxGCPauseMillis=200
+-XX:+UnlockExperimentalVMOptions
+-XX:+DisableExplicitGC -XX:G1NewSizePercent=30
+-XX:G1MaxNewSizePercent=40
+-XX:G1HeapRegionSize=8M</code></pre>
+        </div>
+
+        <div class="guide-card">
+          <div class="guide-step">02</div>
+          <h3>Mod Curation & Compatibility</h3>
+          <p>Curated 100+ mods through a rigorous <strong>batch testing process</strong>. Mods were added in groups of 8-10, tested for:</p>
+          <ul class="guide-list">
+            <li>Registry synchronization errors</li>
+            <li>Mixin conflicts between mods</li>
+            <li>Client-server parity issues</li>
+            <li>Memory footprint per mod</li>
+          </ul>
+          <p>Used <strong>Sinytra Connector</strong> to bridge select Fabric-only mods (like certain UI mods) into the Forge environment.</p>
+        </div>
+
+        <div class="guide-card">
+          <div class="guide-step">03</div>
+          <h3>Configuration & Balancing</h3>
+          <p>Custom-configured every mod's settings for balanced multiplayer gameplay:</p>
+          <ul class="guide-list">
+            <li>Tuned ore generation rates to prevent resource flooding</li>
+            <li>Balanced mob spawn rates across modded dimensions</li>
+            <li>Set up custom recipe modifications via CraftTweaker</li>
+            <li>Configured permission nodes for each mod's commands</li>
+          </ul>
+        </div>
+
+        <div class="guide-card">
+          <div class="guide-step">04</div>
+          <h3>Crash Resolution & Stability</h3>
+          <p>Systematically debugged crashes using log analysis:</p>
+          <ul class="guide-list">
+            <li>Resolved <code>IndexOutOfBoundsException</code> in registry sync</li>
+            <li>Fixed conflicting Mixin patches between mods</li>
+            <li>Identified and removed mods causing memory leaks</li>
+            <li>Created world backup automation scripts</li>
+          </ul>
+        </div>
+
+        <div class="guide-card full-width">
+          <div class="guide-step">05</div>
+          <h3>Architecture Overview</h3>
+          <div class="arch-diagram">
+            <div class="arch-node green">Forge 1.20.1 Server</div>
+            <div class="arch-arrow">↓</div>
+            <div class="arch-row">
+              <div class="arch-node purple">Sinytra Connector</div>
+              <div class="arch-node blue">100+ Curated Mods</div>
+              <div class="arch-node orange">Custom Configs</div>
+            </div>
+            <div class="arch-arrow">↓</div>
+            <div class="arch-row">
+              <div class="arch-node green">Economy System</div>
+              <div class="arch-node purple">Permission Nodes</div>
+              <div class="arch-node blue">World Backups</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT 2: EQUESTRIAN OVERHAUL -->
+  <section class="guide-section alt" id="equestrian">
+    <div class="container">
+      <div class="guide-header">
+        <span class="project-status released" style="position:static">Released</span>
+        <h2 class="section-title">Equestrian Overhaul</h2>
+        <p class="section-desc">A comprehensive modpack featuring custom horse mechanics, new biomes, and a complete equestrian gameplay experience.</p>
+      </div>
+
+      <div class="guide-grid">
+        <div class="guide-card">
+          <div class="guide-step">01</div>
+          <h3>Concept & Mod Research</h3>
+          <p>Researched and evaluated <strong>200+ mods</strong> to find the perfect combination for an equestrian-themed experience:</p>
+          <ul class="guide-list">
+            <li>Horse-related mods: Swem, Horse Combat Controls, Realistic Horse Genetics</li>
+            <li>Biome mods: Biomes O' Plenty, Terralith for varied terrain</li>
+            <li>Quality-of-life: JEI, JourneyMap, Inventory Sorting</li>
+            <li>Visual: Shader compatibility, custom resource packs</li>
+          </ul>
+        </div>
+
+        <div class="guide-card">
+          <div class="guide-step">02</div>
+          <h3>Fabric-to-Forge Bridging</h3>
+          <p>Several essential mods were Fabric-only. Used <strong>Sinytra Connector</strong> and <strong>Forgified Fabric API</strong> to bridge them:</p>
+          <pre><code># Bridged Fabric Mods:
+- Mod Menu (UI navigation)
+- Cloth Config (settings screens)
+- Custom HUD elements
+- Certain entity renderers
+
+# Required compatibility layer:
+sinytra-connector-1.0.0-beta.42+1.20.1.jar
+forgified-fabric-api-0.91.0+2.0.8+1.20.1.jar</code></pre>
+        </div>
+
+        <div class="guide-card">
+          <div class="guide-step">03</div>
+          <h3>Phase-Based Testing</h3>
+          <p>Implemented a <strong>6-phase batch testing</strong> strategy to ensure stability:</p>
+          <ul class="guide-list">
+            <li><strong>Phase 1-2:</strong> Core mods and dependencies (Forge, APIs, libraries)</li>
+            <li><strong>Phase 3-4:</strong> Content mods in batches of 10, testing each batch</li>
+            <li><strong>Phase 5:</strong> Fabric-bridged mods with extra compatibility checks</li>
+            <li><strong>Phase 6:</strong> Client-side mods, shaders, and resource packs</li>
+          </ul>
+          <p>Each phase required a clean server start, 10-min play session, and logout/login cycle.</p>
+        </div>
+
+        <div class="guide-card">
+          <div class="guide-step">04</div>
+          <h3>Modpack Distribution</h3>
+          <p>Packaged the modpack for easy installation:</p>
+          <ul class="guide-list">
+            <li>Created CurseForge-compatible manifest</li>
+            <li>Wrote custom install scripts for server operators</li>
+            <li>Built a config preset system for different play styles</li>
+            <li>Documented all mod versions and dependencies</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT 3: AUTOCRAFT SUITE -->
+  <section class="guide-section" id="autocraft">
+    <div class="container">
+      <div class="guide-header">
+        <span class="project-status dev" style="position:static">In Dev</span>
+        <h2 class="section-title">AutoCraft Suite</h2>
+        <p class="section-desc">A plugin suite for automated server management with Discord integration.</p>
+      </div>
+
+      <div class="guide-grid">
+        <div class="guide-card">
+          <div class="guide-step">01</div>
+          <h3>Plugin Architecture</h3>
+          <p>Designed as a modular plugin suite using <strong>Paper API</strong> and <strong>Java 17</strong>:</p>
+          <pre><code>autocraft-suite/
+├── autocraft-core/        # Shared utilities
+│   ├── ConfigManager.java
+│   ├── DatabasePool.java
+│   └── MessageFormatter.java
+├── autocraft-scheduler/   # Task scheduling
+│   ├── RestartTask.java
+│   ├── BackupTask.java
+│   └── CronParser.java
+├── autocraft-analytics/   # Player tracking
+│   ├── SessionTracker.java
+│   ├── PlaytimeCommand.java
+│   └── StatsAPI.java
+└── autocraft-discord/     # Discord bridge
+    ├── BotManager.java
+    ├── ChatSync.java
+    └── WebhookHandler.java</code></pre>
+        </div>
+
+        <div class="guide-card">
+          <div class="guide-step">02</div>
+          <h3>Scheduled Restart System</h3>
+          <p>Built a flexible restart scheduler with player-friendly warnings:</p>
+          <pre><code>// RestartTask.java
+@Override
+public void run() {
+  int[] warnings = {300, 60, 30, 10, 5};
+  for (int secs : warnings) {
+    scheduler.runTaskLater(plugin, () -> {
+      broadcast("&cServer restart in "
+        + secs + "s");
+    }, (totalDelay - secs) * 20L);
+  }
+  scheduler.runTaskLater(plugin, () -> {
+    Bukkit.shutdown();
+  }, totalDelay * 20L);
+}</code></pre>
+        </div>
+
+        <div class="guide-card">
+          <div class="guide-step">03</div>
+          <h3>Discord Integration</h3>
+          <p>Integrated <strong>JDA (Java Discord API)</strong> for two-way chat sync:</p>
+          <ul class="guide-list">
+            <li>Real-time Minecraft ↔ Discord chat bridge</li>
+            <li>Server status embeds (player count, TPS, uptime)</li>
+            <li>Slash commands: <code>/status</code>, <code>/players</code>, <code>/tps</code></li>
+            <li>Event webhooks for join/leave/death messages</li>
+          </ul>
+        </div>
+
+        <div class="guide-card">
+          <div class="guide-step">04</div>
+          <h3>Player Analytics Dashboard</h3>
+          <p>Built a MySQL-backed analytics system tracking:</p>
+          <ul class="guide-list">
+            <li>Session duration and playtime leaderboards</li>
+            <li>Unique player counts per day/week/month</li>
+            <li>Peak concurrent player tracking</li>
+            <li>Custom events (blocks mined, mobs killed, etc.)</li>
+          </ul>
+          <p>Data exposed via a REST-like API for external dashboards.</p>
+        </div>
+
+        <div class="guide-card full-width">
+          <div class="guide-step">05</div>
+          <h3>Build & Deploy Pipeline</h3>
+          <pre><code># Build with Gradle
+./gradlew shadowJar
+
+# Deploy to server
+scp build/libs/autocraft-suite-1.0.jar user@server:/plugins/
+
+# Hot-reload (Paper)
+/plugman reload AutoCraftSuite
+
+# Run tests
+./gradlew test --info</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BACK LINK -->
+  <section style="padding:60px 0; text-align:center;">
+    <a href="index.html" class="btn-primary">← Back to Portfolio</a>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2026 CraftDev. Crafted with ❤️ and ⛏️ — All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
