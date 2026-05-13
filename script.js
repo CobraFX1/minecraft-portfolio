@@ -163,7 +163,7 @@ if (form) {
 // ===== TYPING EFFECT IN HERO =====
 const typingEl = document.getElementById('typing-text');
 if (typingEl) {
-  const words = ['Servers', 'Mods', 'Plugins', 'Datapacks', 'Modpacks'];
+  const words = ['Worlds', 'Terrain', 'Interiors', 'Biomes', 'Servers', 'Mods'];
   let wordIndex = 0;
   let charIndex = 0;
   let isDeleting = false;

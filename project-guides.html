@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project Build Guides — CraftDev</title>
-  <meta name="description" content="Detailed technical breakdowns of CraftDev's featured Minecraft projects.">
+  <title>Project Build Guides | Jacob</title>
+  <meta name="description" content="Detailed technical breakdowns of Jacob's featured Minecraft builds and development projects.">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="guides.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛏️</text></svg>">
@@ -12,9 +12,10 @@
 <body>
   <nav class="navbar scrolled" id="navbar">
     <div class="container">
-      <a href="index.html" class="nav-logo"><span class="logo-icon">⛏️</span><span>CraftDev</span></a>
+      <a href="index.html" class="nav-logo"><span class="logo-icon">⛏️</span><span>Jacob</span></a>
       <ul class="nav-links" id="nav-links">
         <li><a href="index.html">Home</a></li>
+        <li><a href="#elysian">Elysian Highlands</a></li>
         <li><a href="#moira">Moira Network</a></li>
         <li><a href="#equestrian">Equestrian Overhaul</a></li>
         <li><a href="#autocraft">AutoCraft Suite</a></li>
@@ -30,6 +31,97 @@
       <span class="section-label">Build Logs</span>
       <h1 class="section-title" style="font-size:clamp(2rem,5vw,3.2rem)">How I Built These Projects</h1>
       <p class="section-desc">Detailed technical breakdowns, architecture decisions, and step-by-step processes behind each featured project.</p>
+    </div>
+  </section>
+
+  <!-- PROJECT 0: ELYSIAN HIGHLANDS (BUILD) -->
+  <section class="guide-section alt" id="elysian">
+    <div class="container">
+      <div class="guide-header">
+        <span class="project-status released" style="position:static">Released</span>
+        <h2 class="section-title">Elysian Highlands</h2>
+        <p class="section-desc">A sprawling custom terrain featuring hand-sculpted mountains, lush valleys, and interconnected cave systems. Built for an immersive survival experience.</p>
+      </div>
+
+      <div class="guide-grid">
+        <div class="guide-card">
+          <div class="guide-step">01</div>
+          <h3>Concept & Reference Gathering</h3>
+          <p>Every build starts with <strong>vision</strong>. Collected reference images from real-world landscapes and existing Minecraft builds:</p>
+          <ul class="guide-list">
+            <li>Alpine mountain ranges with dramatic cliff faces</li>
+            <li>Rolling meadows with wildflower patches</li>
+            <li>Hidden cave systems with underground lakes</li>
+            <li>Natural-looking rivers with proper elevation flow</li>
+          </ul>
+          <p>Created a mood board and mapped out biome zones before touching a single block.</p>
+        </div>
+
+        <div class="guide-card">
+          <div class="guide-step">02</div>
+          <h3>Terrain Sculpting with WorldPainter</h3>
+          <p>Used <strong>WorldPainter</strong> for the macro terrain, handling the large-scale elevation and biome layout:</p>
+          <pre><code># WorldPainter Setup:
+- Map size: 4096 × 4096 blocks
+- Height range: Y=64 to Y=256
+- Custom brushes for natural erosion
+- Perlin noise layers for organic feel
+- Hand-painted river paths
+- Custom cave carvers at Y=20-50</code></pre>
+        </div>
+
+        <div class="guide-card">
+          <div class="guide-step">03</div>
+          <h3>Biome Layering & Vegetation</h3>
+          <p>Each biome zone was layered with <strong>custom vegetation</strong> using WorldEdit and manual placement:</p>
+          <ul class="guide-list">
+            <li><strong>Alpine Zone (Y=180+):</strong> Snow caps, sparse spruce, exposed stone</li>
+            <li><strong>Forest Zone (Y=120-180):</strong> Dense mixed forests, custom tree schematics</li>
+            <li><strong>Meadow Zone (Y=80-120):</strong> Grass varieties, wildflowers, scattered oaks</li>
+            <li><strong>Valley Floor (Y=64-80):</strong> Rivers, lakes, farmable flatlands</li>
+          </ul>
+          <p>Over <strong>40 custom tree schematics</strong> were created to avoid the repetitive vanilla look.</p>
+        </div>
+
+        <div class="guide-card">
+          <div class="guide-step">04</div>
+          <h3>Interior Detailing & Structures</h3>
+          <p>Built functional structures integrated naturally into the terrain:</p>
+          <ul class="guide-list">
+            <li>Mountain lodge with full interior furnishing</li>
+            <li>Underground tavern carved into a cliff face</li>
+            <li>Watchtower on the highest peak with panoramic views</li>
+            <li>Hidden shrine in the cave system</li>
+          </ul>
+          <p>Every interior follows the rule: <strong>functional first, decorative second</strong>. All chests, crafting stations, and beds are usable.</p>
+        </div>
+
+        <div class="guide-card full-width">
+          <div class="guide-step">05</div>
+          <h3>Build Pipeline Overview</h3>
+          <div class="arch-diagram">
+            <div class="arch-node green">Concept & References</div>
+            <div class="arch-arrow">↓</div>
+            <div class="arch-row">
+              <div class="arch-node purple">WorldPainter Terrain</div>
+              <div class="arch-node blue">Custom Tree Schematics</div>
+              <div class="arch-node orange">Biome Zone Map</div>
+            </div>
+            <div class="arch-arrow">↓</div>
+            <div class="arch-row">
+              <div class="arch-node green">WorldEdit Detailing</div>
+              <div class="arch-node purple">Manual Vegetation</div>
+              <div class="arch-node blue">Structure Placement</div>
+            </div>
+            <div class="arch-arrow">↓</div>
+            <div class="arch-row">
+              <div class="arch-node orange">Interior Furnishing</div>
+              <div class="arch-node green">Lighting & Ambiance</div>
+              <div class="arch-node purple">Final Polish & Renders</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -285,7 +377,7 @@ scp build/libs/autocraft-suite-1.0.jar user@server:/plugins/
   <footer class="footer">
     <div class="container">
       <div class="footer-bottom">
-        <p>© 2026 CraftDev. Crafted with ❤️ and ⛏️ — All rights reserved.</p>
+        <p>© 2026 Jacob. All rights reserved.</p>
       </div>
     </div>
   </footer>
